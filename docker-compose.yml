@@ -1,0 +1,48 @@
+name: tooktale-demo
+
+x-app: &app
+  image: tooktale-demo:latest
+  pull_policy: never
+  restart: unless-stopped
+  depends_on: [api]
+
+services:
+  api:
+    build: .
+    image: tooktale-demo:latest
+    restart: unless-stopped
+    command: node api/server.mjs
+    environment:
+      PORT: "4105"
+      LAN_IP: ${LAN_IP:-}
+      DATA_FILE: /data/db.json
+    ports: ["4105:4105"]
+    volumes: ["tooktale-data:/data"]
+
+  hub:
+    <<: *app
+    command: node serve.mjs hub/dist 4100
+    ports: ["4100:4100"]
+
+  tooktale:
+    <<: *app
+    command: node serve.mjs tooktale/dist 4101
+    ports: ["4101:4101"]
+
+  tooktale-partner:
+    <<: *app
+    command: node serve.mjs tooktale-partner/dist 4102
+    ports: ["4102:4102"]
+
+  tooktale-runner:
+    <<: *app
+    command: node serve.mjs tooktale-runner/dist 4103
+    ports: ["4103:4103"]
+
+  nakola-tooktale:
+    <<: *app
+    command: node serve.mjs nakola-tooktale/dist 4104
+    ports: ["4104:4104"]
+
+volumes:
+  tooktale-data:

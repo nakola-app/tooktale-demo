@@ -1,0 +1,10 @@
+{
+  "name": "tooktale-demo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "เดโม่ tooktale 4 แอป + mock API (ข้อมูลตัวอย่าง ไม่ใช้กับแขกจริง)",
+  "workspaces": ["shared", "api", "hub", "tooktale", "tooktale-partner", "tooktale-runner", "nakola-tooktale"],
+  "scripts": {
+    "build": "npm run build -w hub -w tooktale -w tooktale-partner -w tooktale-runner -w nakola-tooktale"
+  }
+}

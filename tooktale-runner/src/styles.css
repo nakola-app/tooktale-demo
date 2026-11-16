@@ -1,0 +1,27 @@
+/* คนเดินรถใช้กลางแจ้ง: พื้นเข้ม ตัวใหญ่ ปุ่มใหญ่ */
+:root {
+  --bg: #0a1122; --surface: #141d33; --surface-2: #1f2a44; --line: #2c3a58;
+  --ink: #f3f5fb; --ink-2: #c4ccdc; --ink-3: #97a3bb;
+  --accent: #f5a400; --accent-ink: #1c1400; --accent-soft: #3d2f0a;
+  --coral: #ff7a52; --coral-soft: #4a2316;
+  --good: #5ddc9b; --good-soft: #15382a; --warn: #f7c65c; --warn-soft: #3d2f0a; --bad: #ff8a80; --bad-soft: #451d1a;
+  color-scheme: dark;
+}
+body { font-size: 16px; }
+.btn { min-height: 52px; font-size: 16px; }
+.btn-s { min-height: 36px; font-size: 13px; }
+.job-card { gap: 8px; }
+.kind { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-head); font-weight: 600; }
+.kind.deliver { color: var(--accent); }
+.kind.collect { color: #7fd1e8; }
+.route { border-left: 2px dashed var(--line); padding-left: 10px; display: flex; flex-direction: column; gap: 3px; margin-left: 7px; }
+.chip-btn { background: var(--surface-2); color: var(--ink); }
+.chip-btn[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.callout-warn { color: #f7d98f; }
+.callout-good { color: #a8efc9; }
+.callout-bad { color: #ffc4be; }
+.toast { background: #fff; color: #0f1b3d; }
+.toast .muted { color: #4f5d7a; }
+.tabbar a.active { color: var(--accent); }
+.step.done .step-dot { color: var(--accent-ink); }
+.sheet { background: var(--surface); }

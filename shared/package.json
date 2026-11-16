@@ -1,0 +1,14 @@
+{
+  "name": "@tooktale/shared",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": { ".": "./src/index.js", "./base.css": "./src/base.css" },
+  "dependencies": {
+    "@fontsource/ibm-plex-sans-thai": "^5.1.0",
+    "@fontsource/prompt": "^5.1.0",
+    "lucide-react": "^0.460.0",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1"
+  }
+}
